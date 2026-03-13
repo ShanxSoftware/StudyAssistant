@@ -9,5 +9,6 @@ data/
 *.db
 *.sqlite
 *.log
-*.env
-src/study_assistant/config.py 
+.env
+*.env.local
+

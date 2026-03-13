@@ -7,18 +7,18 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-xai-ai-library = { path = "../xai-ai-library", develop = true }  # or git = "..."
+python = "^3.13"
+xaihandler = { path = "../../xai-ai-library", develop = true }  # or git = "..."
 dearpygui = "^2.0"         # for GUI
-pymupdf = "^1.24"           # PDF
+pymupdf = "^1.27"           # PDF
 python-docx = "^1.1"        # Word
 pyzotero = "^1.5"           # Zotero
 # add others as needed: requests, beautifulsoup4, etc.
 
 [tool.poetry.dev-dependencies]
-pytest = "^8.0"
+pytest = "^8.3"
 black = "^24.0"
-ruff = "^0.6"
+ruff = "^0.7"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
