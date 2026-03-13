@@ -1,4 +1,5 @@
 from study_assistant.ui.console import main as console_main
+from study_assistant.ui.gui import main as gui_main
 from xaihandler import xAI_Handler
 from xaihandler.personality import AgentPersonality, Archetype, AgentTrait, Trait
 from xaihandler.memorystore import MemoryStore
@@ -34,5 +35,6 @@ def smoke_test():
     
 
 if __name__ == "__main__":
-    console_main()  # switch to gui_main() once ready
+    gui_main()
+    #console_main()  # switch to gui_main() once ready
     #smoke_test()
