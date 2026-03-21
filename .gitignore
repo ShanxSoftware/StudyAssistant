@@ -11,4 +11,6 @@ data/
 *.log
 .env
 *.env.local
+*.db-shm
+*.db-wal
 

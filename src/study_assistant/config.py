@@ -23,9 +23,10 @@ XAI_API_MODEL = get_required_env("XAI_API_MODEL")
 XAI_TIMEOUT = get_required_env("XAI_TIMEOUT")
 ZOTERO_LIBRARY_ID = get_required_env("ZOTERO_LIBRARY_ID")
 ZOTERO_API_KEY = get_required_env("ZOTERO_API_KEY")
+DB_PATH = get_required_env("DB_PATH")
 
 # Non-secret config (can stay here or move to separate constants)
 DATA_DIR = Path(__file__).parent.parent.parent / "data"
-DB_PATH = DATA_DIR / "assistant.db"
+RESEARCH_LIBRARY = DATA_DIR / "research_library"
 INCOMING_FOLDER = DATA_DIR / "incoming"
 MAX_SECTION_TOKENS = 950

@@ -7,7 +7,7 @@ from xaihandler.personality import AgentPersonality, Archetype
 from xaihandler.memorystore import MemoryStore
 from xaihandler.definitions import AutonomousOutput, JOB_STATUS, JobCard, BatchStatus
 from study_assistant.agents import create_study_agent
-from study_assistant.tools import common, pdf_reader, word_reader, list_incoming_pdfs
+from study_assistant.tools import common, pdf_reader, word_reader, discovery
 from pathlib import Path
 import itertools
 from contextlib import contextmanager

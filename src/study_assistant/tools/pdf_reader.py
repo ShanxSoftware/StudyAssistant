@@ -8,6 +8,7 @@ from study_assistant.tools.common import get_doc_key, smart_chunk_document, Chun
 from xaihandler.memorystore import MemoryStore
 from typing import Dict, List, Optional
 from pydantic import BaseModel, Field
+from pdf2doi import pdf2doi
 
 def read_pdf(file_path: str | Path, chunk_index: int = 0, reset: bool = False) -> Dict: 
     path = Path(file_path)
@@ -21,12 +22,15 @@ def read_pdf(file_path: str | Path, chunk_index: int = 0, reset: bool = False) -
             return doc_payload.model_dump()
         
         chunks = smart_chunk_document(path)
+        doi_result = pdf2doi(str(path))
+        doi = doi_result["identifier"] if doi_result and doi_result.get("identifier_type") == "DOI" else None
         payload_meta = Payload_Metadata(
             source_path=str(path),
             doc_key=doc_key, 
             total_chunks=len(chunks),
             total_tokens_est=sum(c.tokens_est for c in chunks),
             title=path.stem,
+            doi=doi,
             chunks=chunks # stored for later retrieval 
         )
         chunked_doc = Chunked_Document(doc_key=doc_key, metadata=payload_meta, chunks=chunks)

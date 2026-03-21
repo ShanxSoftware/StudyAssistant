@@ -5,8 +5,7 @@ import hashlib
 import fitz
 from enum import Enum
 from docx import Document
-from study_assistant.config import DB_PATH, MAX_SECTION_TOKENS
-from xaihandler.memorystore import MemoryStore
+from study_assistant.config import MAX_SECTION_TOKENS
 from typing import Optional, List
 from pydantic import BaseModel, Field, ConfigDict
 
@@ -34,6 +33,8 @@ class Payload_Metadata(BaseModel):
     total_chunks: int = Field(..., description="Total number of chunks in this document")
     total_tokens_est: int = Field(..., description="")
     title: str = Field(..., description="Title of the Document")
+    doi: Optional[str] = Field(default=None, description="DOI extracted by pdf2doi")
+    # Add Author List, publication date, and other zotero fields here. 
     chunks: List[Document_Chunk] = Field(..., description="List of chunks for processing")
 
 class Chunked_Document(BaseModel):
