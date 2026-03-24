@@ -1,0 +1,1 @@
+Vercel UI starter: fork examples/vercel-ui — it ships with Supabase auth, user_profiles for DISC config, collaboration rooms, and file upload. Customize the components for your domain (study assistant, etc.).

@@ -3,7 +3,7 @@ from pyzotero import zotero
 import requests
 from pathlib import Path
 import shutil
-from typing import Dict, List
+from typing import Dict
 from xaihandler.memorystore import MemoryStore
 from study_assistant.config import ZOTERO_LIBRARY_ID, ZOTERO_API_KEY, RESEARCH_LIBRARY, DB_PATH
 from study_assistant.tools.common import get_doc_key, Chunked_Document
